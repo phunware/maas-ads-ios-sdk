@@ -2,8 +2,8 @@
 platform :ios, '10.1'
 
 target 'Sample' do
-    use_frameworks!
+  use_frameworks!
 
-  pod 'PWAds', :path => '../..'
+  pod 'PWAds'
 
 end
