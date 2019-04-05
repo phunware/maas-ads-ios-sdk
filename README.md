@@ -5,7 +5,7 @@ Version 4.0.0
 
 Overview
 ------------
-This is Phunware's iOS SDK for the MaaS Advertising module. Visit https://ads.tapit.com/ and https://maas.phunware.com/ for more details and to sign up.
+This is Phunware's iOS SDK for the MaaS Advertising module. Visit https://ssp-portal.phunware.com for more details and to sign up.
 
 Requirements
 ------------
