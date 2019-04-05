@@ -1,25 +1,20 @@
 //
 //  AppDelegate.swift
-//  Sample
+//  iOSTestAppSingleWorkspace
 //
-//  Created on 8/10/17.
-//  Copyright © 2017 Phunware, Inc. All rights reserved.
+//  Copyright © 2018 Phunware. All rights reserved.
 //
 
 import UIKit
-import PWAdvertising
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
-        if let splitVC = window?.rootViewController as? UISplitViewController {
-            splitVC.delegate = self
-        }
-        PWAdsAppTracker.shared().reportApplicationOpen()
+
+    private func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        // Override point for customization after application launch.
         return true
     }
 
@@ -45,11 +40,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-}
 
-extension AppDelegate: UISplitViewControllerDelegate {
-    func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
-        return true
-    }
 }
 
