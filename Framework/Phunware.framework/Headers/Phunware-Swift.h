@@ -187,16 +187,19 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 @class WKWebView;
 @class WKNavigationAction;
+@protocol UIViewControllerTransitionCoordinator;
 @class NSBundle;
 @class NSCoder;
 
 SWIFT_CLASS("_TtC8Phunware18MRAIDBrowserWindow")
 @interface MRAIDBrowserWindow : UIViewController <WKNavigationDelegate, WKUIDelegate>
+@property (nonatomic, readonly) BOOL prefersStatusBarHidden;
 - (void)webView:(WKWebView * _Nonnull)webView decidePolicyForNavigationAction:(WKNavigationAction * _Nonnull)navigationAction decisionHandler:(void (^ _Nonnull)(WKNavigationActionPolicy))decisionHandler;
 - (void)onCloseClicked;
 - (void)onBackClicked;
 - (void)onReloadClicked;
 - (void)onForwardClicked;
+- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id <UIViewControllerTransitionCoordinator> _Nonnull)coordinator;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -257,7 +260,6 @@ SWIFT_CLASS("_TtC8Phunware18PWInterstitialView")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@protocol UIViewControllerTransitionCoordinator;
 
 SWIFT_CLASS("_TtC8Phunware13PWMRAIDBanner")
 @interface PWMRAIDBanner : UIViewController
@@ -282,19 +284,25 @@ SWIFT_CLASS("_TtC8Phunware19PWMRAIDInterstitial")
 
 
 SWIFT_CLASS("_TtC8Phunware11PWVASTVideo")
-@interface PWVASTVideo : UIViewController <WKUIDelegate>
-- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@interface PWVASTVideo : NSObject <WKNavigationDelegate, WKUIDelegate>
+- (void)webView:(WKWebView * _Nonnull)webView didFinishNavigation:(WKNavigation * _Null_unspecified)navigation;
+- (void)webView:(WKWebView * _Nonnull)webView decidePolicyForNavigationAction:(WKNavigationAction * _Nonnull)navigationAction decisionHandler:(void (^ _Nonnull)(WKNavigationActionPolicy))decisionHandler;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
 SWIFT_CLASS("_TtC8Phunware13PWVideoPlayer")
-@interface PWVideoPlayer : UIViewController <WKNavigationDelegate, WKUIDelegate>
+@interface PWVideoPlayer : UIViewController <UIGestureRecognizerDelegate, WKNavigationDelegate, WKUIDelegate>
 @property (nonatomic, readonly) BOOL prefersStatusBarHidden;
+- (void)viewWillAppear:(BOOL)animated;
+- (void)viewWillDisappear:(BOOL)animated;
+- (void)webView:(WKWebView * _Nonnull)webView didFinishNavigation:(WKNavigation * _Null_unspecified)navigation;
 - (void)webView:(WKWebView * _Nonnull)webView decidePolicyForNavigationAction:(WKNavigationAction * _Nonnull)navigationAction decisionHandler:(void (^ _Nonnull)(WKNavigationActionPolicy))decisionHandler;
 - (void)webViewDidClose:(WKWebView * _Nonnull)webView;
 @property (nonatomic, readonly) BOOL shouldAutorotate;
+@property (nonatomic, readonly) UIInterfaceOrientationMask supportedInterfaceOrientations;
 - (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id <UIViewControllerTransitionCoordinator> _Nonnull)coordinator;
+- (BOOL)gestureRecognizer:(UIGestureRecognizer * _Nonnull)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer * _Nonnull)otherGestureRecognizer SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -353,6 +361,7 @@ SWIFT_CLASS("_TtC8Phunware9Placement")
 /// Configures the parameters used in requesting a <code>Placement</code>.
 SWIFT_CLASS("_TtC8Phunware22PlacementRequestConfig")
 @interface PlacementRequestConfig : NSObject
+- (nonnull instancetype)initWithAccountId:(NSInteger)accountId zoneId:(NSInteger)zoneId width:(NSInteger)width height:(NSInteger)height personalizedAdsEnabled:(BOOL)personalizedAdsEnabled keywords:(NSArray<NSString *> * _Nonnull)keywords click:(NSString * _Nullable)click customExtras:(NSDictionary * _Nullable)customExtras OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
 @end

@@ -168,7 +168,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Sample/Pods-Sample-frameworks.sh",
-				"${PODS_ROOT}/../../../Framework/Phunware.framework",
+				"${PODS_ROOT}/PWAds/Framework/Phunware.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
