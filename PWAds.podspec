@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'PWAds'
-  s.version      = '4.0.2'
+  s.version      = '4.0.3'
   s.summary      = "The Phunware Advertising SDK for iOS"
   s.homepage     = "http://phunware.github.io/maas-ads-ios-sdk/"
   s.author       = { 'Phunware, Inc.' => 'http://www.phunware.com' }
