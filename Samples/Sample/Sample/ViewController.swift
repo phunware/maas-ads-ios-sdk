@@ -40,7 +40,7 @@ class ViewController: UIViewController, PWInterstitialDelegate {
     
     
     @IBAction func onClickBanner(_ sender: Any) {
-        let config = PlacementRequestConfig(accountId: 174812, zoneId: 335387, width:nil, height:nil, customExtras:nil)
+        let config = PlacementRequestConfig(accountId: 174812, zoneId: 335387, width:320, height:320, customExtras:nil)
         Phunware.requestPlacement(with: config) { response in
             switch response {
             case .success(_ , let placements):
