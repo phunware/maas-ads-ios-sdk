@@ -213,9 +213,12 @@ SWIFT_CLASS("_TtC8Phunware12MRAIDHandler")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class Placement;
 
 SWIFT_CLASS("_TtC8Phunware8PWBanner")
 @interface PWBanner : NSObject
+- (nonnull instancetype)initWithPlacement:(Placement * _Nonnull)placement parentViewController:(UIViewController * _Nonnull)parentViewController frame:(CGRect)frame respectSafeAreaLayoutGuide:(BOOL)respectSafeAreaLayoutGuide OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithPlacement:(Placement * _Nonnull)placement parentViewController:(UIViewController * _Nonnull)parentViewController position:(NSString * _Nonnull)position respectSafeAreaLayoutGuide:(BOOL)respectSafeAreaLayoutGuide OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
 @end
@@ -308,7 +311,6 @@ SWIFT_CLASS("_TtC8Phunware13PWVideoPlayer")
 @end
 
 @class PlacementRequestConfig;
-@class Placement;
 @class NSNumber;
 
 /// The class used to make requests against the Phunware API.
