@@ -214,10 +214,11 @@ SWIFT_CLASS("_TtC8Phunware12MRAIDHandler")
 @end
 
 @class Placement;
+@class UIView;
 
 SWIFT_CLASS("_TtC8Phunware8PWBanner")
 @interface PWBanner : NSObject
-- (nonnull instancetype)initWithPlacement:(Placement * _Nonnull)placement parentViewController:(UIViewController * _Nonnull)parentViewController frame:(CGRect)frame respectSafeAreaLayoutGuide:(BOOL)respectSafeAreaLayoutGuide OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithPlacement:(Placement * _Nonnull)placement container:(UIView * _Nonnull)container respectSafeAreaLayoutGuide:(BOOL)respectSafeAreaLayoutGuide OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithPlacement:(Placement * _Nonnull)placement parentViewController:(UIViewController * _Nonnull)parentViewController position:(NSString * _Nonnull)position respectSafeAreaLayoutGuide:(BOOL)respectSafeAreaLayoutGuide OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
