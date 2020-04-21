@@ -392,6 +392,7 @@ SWIFT_CLASS("_TtC8Phunware9Placement")
 /// Configures the parameters used in requesting a <code>Placement</code>.
 SWIFT_CLASS("_TtC8Phunware22PlacementRequestConfig")
 @interface PlacementRequestConfig : NSObject
+@property (nonatomic) BOOL personalizedAdsEnabled;
 - (nonnull instancetype)initWithAccountId:(NSInteger)accountId zoneId:(NSInteger)zoneId width:(NSInteger)width height:(NSInteger)height personalizedAdsEnabled:(BOOL)personalizedAdsEnabled keywords:(NSArray<NSString *> * _Nonnull)keywords click:(NSString * _Nullable)click customExtras:(NSDictionary * _Nullable)customExtras OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
@@ -803,6 +804,7 @@ SWIFT_CLASS("_TtC8Phunware9Placement")
 /// Configures the parameters used in requesting a <code>Placement</code>.
 SWIFT_CLASS("_TtC8Phunware22PlacementRequestConfig")
 @interface PlacementRequestConfig : NSObject
+@property (nonatomic) BOOL personalizedAdsEnabled;
 - (nonnull instancetype)initWithAccountId:(NSInteger)accountId zoneId:(NSInteger)zoneId width:(NSInteger)width height:(NSInteger)height personalizedAdsEnabled:(BOOL)personalizedAdsEnabled keywords:(NSArray<NSString *> * _Nonnull)keywords click:(NSString * _Nullable)click customExtras:(NSDictionary * _Nullable)customExtras OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
