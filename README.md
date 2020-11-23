@@ -1,7 +1,7 @@
 MaaS Advertising iOS SDK
 ================
 
-Version 4.0.0
+Version 4.0.4
 
 Overview
 ------------
